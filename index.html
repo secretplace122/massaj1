@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатория тела Ирины Ивановой | Массаж в Солнечногорске</title>
+    <meta name="description"
+        content="Профессиональный массаж спины, шеи, лица и ног в Солнечногорске. Индивидуальный подход к каждому клиенту.">
+    <meta name="keywords"
+        content="Массаж, Массаж Солнечногорск, Массаж спины, Массаж шеи, массаж лица, массаж ног, Массажист">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Контейнер для всего контента -->
+    <div class="container">
+        <!-- Шапка сайта -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Лаборатория тела Ирины Ивановой - логотип" class="site-logo">
+                </div>
+                <h1 class="logo">Лаборатория тела <span>Ирины Ивановой</span></h1>
+                <p class="tagline">Ваше тело заслуживает внимания и заботы</p>
+                <a href="#contact" class="cta-button">Записаться на сеанс</a>
+            </div>
+        </header>
+
+        <!-- Основное содержимое -->
+        <main>
+            <!-- Блок 1: Местоположение -->
+            <section id="location" class="section location-section">
+                <div class="section-content">
+                    <h2 class="section-title">Где мы находимся</h2>
+                    <div class="location-wrapper">
+                        <div class="location-text">
+                            <p>Мы располагаемся в тихом и уютном районе Солнечногорска, где вы можете полностью
+                                расслабиться и отдохнуть от городской суеты.</p>
+                            <div class="address-card">
+                                <h3>Наш адрес:</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> г. Солнечногорск, ул. Красноармейская, д. 8,
+                                    каб. 6</p>
+                                <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-19:00</p>
+                                <p><i class="fas fa-phone"></i> +7 (911) 895-55-99</p>
+                            </div>
+                        </div>
+                        <div class="location-map">
+                            <div class="map-placeholder">
+                                <div class="map-marker">
+                                    <i class="fas fa-map-pin"></i>
+                                </div>
+                                <p>Карта: г. Солнечногорск, ул. Красноармейская, д. 8, каб. 6</p>
+                                <p class="map-note">Нажмите для открытия карты</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок 2: О нас -->
+            <section id="about" class="section about-section">
+                <div class="section-content">
+                    <h2 class="section-title">Кто мы и что мы делаем</h2>
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p>Я, Ирина Иванова, диплoмировaнный мaссажиcт с медицинским образованием и большим oпытoм
+                                paбoты. А также руководитель спа-студии «Лаборатория тела». Работаю в команде опытных
+                                массажистов</p>
+                            <p>В "Лаборатории тела" мы используем индивидуальный подход к каждому клиенту, подбирая
+                                оптимальные техники массажа для решения конкретных задач: снятие напряжения,
+                                восстановление после нагрузок, улучшение кровообращения или просто глубокое
+                                расслабление.</p>
+                            <p>Мы предлагаем различные виды массажа, от классического до антицеллюлитного.</p>
+                        </div>
+                        <div class="about-image">
+                            <div class="image-placeholder">
+                                <i class="fas fa-spa"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Галерея (новый блок) -->
+            <section id="gallery" class="section gallery-section">
+                <div class="section-content">
+                    <h2 class="section-title">Наша галерея</h2>
+                    <div class="gallery-container">
+                        <!-- Горизонтальная карусель -->
+                        <div class="horizontal-carousel" id="horizontal-carousel">
+                            <!-- Фото будут добавлены через JavaScript -->
+                        </div>
+
+                        <!-- Навигационные точки -->
+                        <div class="carousel-dots" id="carousel-dots">
+                            <!-- Точки будут добавлены через JavaScript -->
+                        </div>
+
+                        <!-- Кнопки навигации -->
+                        <button class="carousel-btn prev-btn" aria-label="Предыдущее фото">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" aria-label="Следующее фото">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Модальное окно для полноразмерного просмотра -->
+                    <div class="modal-overlay" id="image-modal">
+                        <div class="modal-content">
+                            <button class="modal-close" aria-label="Закрыть">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <div class="modal-image-container">
+                                <img src="" alt="" id="modal-image">
+                                <button class="modal-prev" aria-label="Предыдущее фото">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="modal-next" aria-label="Следующее фото">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="modal-counter">
+                                <span id="current-img">1</span> / <span id="total-img">10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок 3: Прайс-лист -->
+            <section id="prices" class="section prices-section">
+                <div class="section-content">
+                    <h2 class="section-title">Наши услуги и цены</h2>
+                    <div class="prices-container">
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Общий массаж тела</h3>
+                                <div class="price">3000 ₽</div>
+                            </div>
+                            <p>Комплексный массаж всего тела для глубокого расслабления и восстановления</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 90 минут</p>
+                        </div>
+
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Массаж спины</h3>
+                                <div class="price">1800 ₽</div>
+                            </div>
+                            <p>Глубокий массаж мышц спины для снятия напряжения и устранения болей</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 35 минут</p>
+                        </div>
+
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Массаж шеи и воротниковой зоны</h3>
+                                <div class="price">1500 ₽</div>
+                            </div>
+                            <p>Эффективное снятие напряжения в шейном отделе и плечах</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 20 минут</p>
+                        </div>
+
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Массаж лица</h3>
+                                <div class="price">1800 ₽</div>
+                            </div>
+                            <p>Омолаживающий и тонизирующий массаж для улучшения состояния кожи</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 50 минут</p>
+                        </div>
+
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Массаж ног</h3>
+                                <div class="price">1500 ₽</div>
+                            </div>
+                            <p>Снятие усталости, улучшение кровообращения и уменьшение отечности</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 40 минут</p>
+                        </div>
+
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Антицеллюлитный массаж ручной 1 зона</h3>
+                                <div class="price">2000 ₽</div>
+                            </div>
+                            <p>Специализированный массаж для коррекции фигуры и улучшения состояния кожи. 1 зона</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 90 минут</p>
+                        </div>
+
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h3>Антицеллюлитный массаж ручной 2 зоны</h3>
+                                <div class="price">3000 ₽</div>
+                            </div>
+                            <p>Специализированный массаж для коррекции фигуры и улучшения состояния кожи. 2 зоны</p>
+                            <p class="duration"><i class="fas fa-clock"></i> 150 минут</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок 4: Контакты и запись -->
+            <section id="contact" class="section contact-section">
+                <div class="section-content">
+                    <h2 class="section-title">Записаться на сеанс</h2>
+                    <div class="contact-wrapper">
+                        <div class="contact-info">
+                            <h3>Свяжитесь с нами</h3>
+                            <p>Выберите удобный для вас способ связи, чтобы записаться на массаж или задать вопросы:</p>
+                            <div class="contact-details">
+                                <p><i class="fas fa-phone"></i> +7 (911) 895-55-99</p>
+                                <p><i class="fas fa-envelope"></i> info@lab-body.ru</p>
+                                <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-21:00</p>
+                                <p><i class="fas fa-clock"></i> Сб-Вс: 10:00-19:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <h3>Форма записи</h3>
+                            <form id="appointment-form">
+                                <div class="form-group">
+                                    <input type="text" id="name" placeholder="Ваше имя" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="phone" placeholder="Ваш телефон" required>
+                                </div>
+                                <div class="form-group">
+                                    <select id="service" required>
+                                        <option value="" disabled selected>Выберите услугу</option>
+                                        <option value="back">Массаж спины</option>
+                                        <option value="neck">Массаж шеи</option>
+                                        <option value="face">Массаж лица</option>
+                                        <option value="legs">Массаж ног</option>
+                                        <option value="full">Общий массаж тела</option>
+                                        <option value="anti">Антицеллюлитный массаж</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="submit-btn">Отправить заявку</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Лаборатория тела <span>Ирины Ивановой</span></h3>
+                    <p class="footer-tagline">Профессиональный массаж в Солнечногорске</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Мы в социальных сетях</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/pro.massage.ira?igsh=MWtwOHozMmFsZGx5aw%3D%3D&utm_source=qr"
+                            class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://vk.com/laboratory190" class="social-link" aria-label="VKontakte">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="https://t.me/+GEg6LbwPCmdkMmQ6" class="social-link" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2025 Лаборатория тела Ирины Ивановой.</p>
+                    <p>г. Солнечногорск, ул. Красноармейская, д. 8, каб. 6</p>
+                    <p><a href="tel:+79118955599">+7 (911) 895-55-99</a></p>
+                    <p>«Meta признана экстремистской организацией в России»</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
