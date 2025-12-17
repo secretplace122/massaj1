@@ -907,14 +907,14 @@ body {
         font-size: 1.2rem;
     }
 }
-/* Header с логотипом слева, всё остальное по центру */
+/* Header - десктоп: логотип слева, контент по центру */
 .header-content {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: 180px; /* Минимальная высота для размещения логотипа */
+    min-height: 180px;
 }
 
 .logo-container {
@@ -937,47 +937,63 @@ body {
 
 .logo, .tagline, .cta-button {
     width: 100%;
-    max-width: 600px; /* Ограничиваем ширину текстового контента */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Размеры логотипа */
+/* Размеры логотипа для десктопа */
 .site-logo {
-    width: 70px;  /* Для мобильных */
-    height: 70px;
+    width: 110px;
+    height: 110px;
 }
 
-@media (min-width: 768px) {
+/* МОБИЛЬНАЯ ВЕРСИЯ - логотип сверху */
+@media (max-width: 767px) {
+    .header-content {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .logo-container {
+        position: static;
+        order: 1;
+        transform: none;
+        margin-bottom: 0.5rem;
+    }
+    
+    .logo {
+        order: 2;
+        margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+        order: 3;
+        margin-bottom: 1rem;
+    }
+    
+    .cta-button {
+        order: 4;
+    }
+    
     .site-logo {
-        width: 90px;  /* Для планшетов */
+        width: 120px;
+        height: 120px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* Планшетная версия */
+@media (min-width: 768px) and (max-width: 991px) {
+    .site-logo {
+        width: 90px;
         height: 90px;
     }
     
     .header-content {
         min-height: 200px;
-    }
-}
-
-@media (min-width: 992px) {
-    .site-logo {
-        width: 110px;  /* Для десктопа */
-        height: 110px;
-    }
-    
-    .header-content {
-        min-height: 220px;
-    }
-}
-
-/* На очень маленьких экранах скрываем логотип */
-@media (max-width: 360px) {
-    .logo-container {
-        display: none;
-    }
-    
-    .header-content {
-        min-height: auto;
-        padding-top: 1rem;
     }
 }
