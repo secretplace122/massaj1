@@ -1150,7 +1150,6 @@ body {
     }
 }
 
-/* Исправляем модальное окно для мобильных устройств */
 @media (max-width: 768px) {
     .gallery-container {
         height: 500px;
@@ -1163,14 +1162,13 @@ body {
         font-size: 1.2rem;
     }
 
-    /* УВЕЛИЧИВАЕМ модальное окно */
     .modal-content {
         max-width: 98% !important;
         max-height: 95% !important;
         width: 98% !important;
         height: 95% !important;
         border-radius: 15px !important;
-        background-color: #292626 !important; /* Черный фон для фото */
+        background-color: #292626 !important;
     }
 
     .modal-image-container {
@@ -1200,7 +1198,6 @@ body {
         right: 10px !important;
     }
     
-    /* Увеличиваем крестик закрытия */
     .modal-close {
         width: 50px !important;
         height: 50px !important;
@@ -1214,7 +1211,6 @@ body {
     }
 }
 
-/* Для очень маленьких экранов - ПОЛНОЭКРАННЫЙ режим */
 @media (max-width: 480px) {
     .gallery-container {
         height: 350px;
@@ -1274,9 +1270,8 @@ body {
     }
 }
 
-/* Дополнительно улучшаем внешний вид модального окна */
 .modal-content {
-    background-color: #000; /* Черный фон для лучшего просмотра */
+    background-color: #312f2f;
 }
 
 #modal-image {
@@ -1284,7 +1279,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Анимация увеличения при клике */
 #modal-image.zoomed {
     transform: scale(1.5);
     cursor: zoom-out;
@@ -1294,7 +1288,6 @@ body {
     cursor: zoom-in;
 }
 
-/* Счетчик изображений делаем более заметным */
 .modal-counter {
     font-weight: 600;
     background-color: rgba(0, 0, 0, 0.7);
