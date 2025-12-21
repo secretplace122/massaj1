@@ -1,4 +1,3 @@
-/* Сброс стандартных отступов и установка базовых стилей */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +19,6 @@ body {
     overflow: hidden;
 }
 
-/* Общие стили для секций */
 .section {
     padding: 3rem 1.5rem;
 }
@@ -51,7 +49,6 @@ body {
     border-radius: 2px;
 }
 
-/* Стили для заголовка */
 .header {
     background-color: #3c4b38;
     color: #f9fefa;
@@ -105,7 +102,6 @@ body {
     color: #f9fefa;
 }
 
-/* Стили для блока местоположения */
 .location-wrapper {
     display: flex;
     flex-direction: column;
@@ -190,7 +186,6 @@ body {
     -webkit-backdrop-filter: blur(5px);
 }
 
-/* Стили для блока "О нас" */
 .about-content {
     display: flex;
     flex-direction: column;
@@ -217,7 +212,6 @@ body {
     opacity: 0.7;
 }
 
-/* Стили для блока с ценами */
 .prices-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -275,7 +269,6 @@ body {
     margin-right: 8px;
 }
 
-/* Стили для блока контактов */
 .contact-wrapper {
     display: flex;
     flex-direction: column;
@@ -349,11 +342,10 @@ body {
     background-color: #2f3b2c;
 }
 
-/* Стили для подвала */
 .footer {
     background-color: #3c4b38;
     color: #f9fefa;
-    padding: 0.5rem 0.1rem;
+    padding: 1.2rem 0.1rem;
     border-radius: 30px 30px 0 0;
 }
 
@@ -440,7 +432,6 @@ body {
     text-decoration: underline;
 }
 
-/* Стили для галереи (ГОРИЗОНТАЛЬНАЯ КАРУСЕЛЬ) */
 .gallery-section {
     background-color: #f8f9f8;
     border-radius: 30px;
@@ -458,7 +449,6 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-/* Горизонтальная карусель */
 .horizontal-carousel {
     display: flex;
     width: 100%;
@@ -486,7 +476,6 @@ body {
     transform: scale(1.02);
 }
 
-/* Навигационные точки */
 .carousel-dots {
     position: absolute;
     bottom: 15px;
@@ -519,7 +508,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Кнопки навигации */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -557,7 +545,6 @@ body {
     right: 15px;
 }
 
-/* Модальное окно для полноразмерного просмотра */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -682,7 +669,6 @@ body {
     font-size: 1.2rem;
 }
 
-/* Адаптивные стили для планшетов */
 @media (min-width: 768px) {
     .section {
         padding: 4rem 2rem;
@@ -739,7 +725,6 @@ body {
     }
 }
 
-/* Адаптивные стили для десктопов */
 @media (min-width: 992px) {
     .section {
         padding: 2rem 2rem;
@@ -759,7 +744,6 @@ body {
     }
 }
 
-/* Адаптивность для галереи */
 @media (max-width: 768px) {
     .gallery-container {
         height: 500px;
@@ -800,7 +784,6 @@ body {
     }
 }
 
-/* Улучшаем стили для модального окна на мобильных */
 @media (max-width: 480px) {
     .gallery-container {
         height: 350px;
@@ -816,7 +799,6 @@ body {
     }
 }
 
-/* Header с логотипом слева на всех устройствах */
 .header-content {
     display: flex;
     align-items: center;
@@ -856,17 +838,14 @@ body {
     margin-left: auto;
 }
 
-/* Размеры логотипа для разных устройств */
 .site-logo {
     width: 80px;
-    /* Для мобильных */
     height: 80px;
 }
 
 @media (min-width: 768px) {
     .site-logo {
         width: 100px;
-        /* Для планшетов */
         height: 100px;
     }
 
@@ -878,7 +857,6 @@ body {
 @media (min-width: 992px) {
     .site-logo {
         width: 120px;
-        /* Для десктопа */
         height: 120px;
     }
 
@@ -887,7 +865,6 @@ body {
     }
 }
 
-/* На очень маленьких экранах */
 @media (max-width: 400px) {
     .header-content {
         gap: 1rem;
@@ -907,7 +884,6 @@ body {
     }
 }
 
-/* Header - десктоп: логотип слева, контент по центру */
 .header-content {
     position: relative;
     display: flex;
@@ -944,13 +920,11 @@ body {
     margin-right: auto;
 }
 
-/* Размеры логотипа для десктопа */
 .site-logo {
     width: 110px;
     height: 110px;
 }
 
-/* МОБИЛЬНАЯ ВЕРСИЯ - логотип сверху */
 @media (max-width: 767px) {
     .header-content {
         flex-direction: column;
@@ -988,7 +962,6 @@ body {
     }
 }
 
-/* Планшетная версия */
 @media (min-width: 768px) and (max-width: 991px) {
     .site-logo {
         width: 90px;
@@ -1000,7 +973,6 @@ body {
     }
 }
 
-/* Стили для кнопки в карточке цены */
 .price-cta-button {
     display: inline-block;
     background-color: #3c4b38;
@@ -1025,7 +997,6 @@ body {
     box-shadow: 0 4px 12px rgba(47, 59, 44, 0.2);
 }
 
-/* Стили для контактных кнопок */
 .contact-item {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
@@ -1083,7 +1054,6 @@ body {
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
 }
 
-/* Для мобильных устройств */
 @media (max-width: 768px) {
     .contact-button {
         width: 100%;
@@ -1095,14 +1065,13 @@ body {
     }
 }
 
-/* Подсказка с абсолютным позиционированием */
 .contact-info {
     position: relative;
 }
 
 .contact-hint {
     position: absolute;
-    top: -70px; /* Располагаем над контактами */
+    top: -70px;
     left: 0;
     right: 0;
     opacity: 0;
@@ -1133,12 +1102,24 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-5px); }
-    60% { transform: translateY(-3px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        transform: translateY(-3px);
+    }
 }
 
-/* Добавляем стрелочку к подсказке */
 .contact-hint::after {
     content: '';
     position: absolute;
@@ -1148,4 +1129,23 @@ body {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #3c4b38;
+}
+.price-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.price-card .price-cta-button {
+    margin-top: auto;
+    align-self: flex-end;
+    width: auto;
+    min-width: 120px;
+}
+
+@media (max-width: 768px) {
+    .price-card .price-cta-button {
+        width: 100%;
+        text-align: center;
+    }
 }

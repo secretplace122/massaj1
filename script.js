@@ -1,8 +1,6 @@
-// Обработчик отправки формы записи
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('appointment-form');
 
-    // Обработчик клика по карте
     const mapPlaceholder = document.querySelector('.map-placeholder');
     if (mapPlaceholder) {
         mapPlaceholder.addEventListener('click', function () {
@@ -12,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Плавная прокрутка для якорных ссылок
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -29,17 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     behavior: 'smooth'
                 });
 
-                // Ждем завершения скролла и подсвечиваем контакты
                 setTimeout(() => {
                     if (targetId === '#contact') {
                         highlightContactButtons();
                     }
-                }, 800); // Время должно совпадать с длительностью скролла
+                }, 800);
             }
         });
     });
 
-    // Добавляем небольшой визуальный эффект при наведении на карточки цен
     const priceCards = document.querySelectorAll('.price-card');
     priceCards.forEach(card => {
         card.addEventListener('mouseenter', function () {
@@ -51,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Анимация появления элементов при прокрутке
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -65,17 +59,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Наблюдаем за секциями
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
         observer.observe(section);
     });
 
-    // Инициализация галереи
     initHorizontalGallery();
 });
 
-// Горизонтальная галерея
 function initHorizontalGallery() {
     const carousel = document.getElementById('horizontal-carousel');
     const dotsContainer = document.getElementById('carousel-dots');
@@ -89,7 +80,6 @@ function initHorizontalGallery() {
     const currentImgSpan = document.getElementById('current-img');
     const totalImgSpan = document.getElementById('total-img');
 
-    // Массив изображений для галереи
     const images = [
         'images/1.jpg',
         'images/2.jpg',
@@ -108,22 +98,17 @@ function initHorizontalGallery() {
     let autoSlideInterval;
     let isHovering = false;
 
-    // Инициализация галереи
     function init() {
-        // Очищаем карусель и точки
         carousel.innerHTML = '';
         dotsContainer.innerHTML = '';
 
-        // Создаем элементы карусели
         images.forEach((imgSrc, index) => {
-            // Проверяем существование файла
             const img = new Image();
             img.onerror = function () {
                 console.log(`Изображение не найдено: ${imgSrc}`);
             };
             img.src = imgSrc;
 
-            // Создаем элемент карусели
             const carouselItem = document.createElement('div');
             carouselItem.className = 'carousel-item';
             if (index === 0) carouselItem.classList.add('active');
@@ -132,13 +117,12 @@ function initHorizontalGallery() {
             carouselImg.src = imgSrc;
             carouselImg.alt = `Интерьер массажного салона ${index + 1}`;
             carouselImg.dataset.index = index;
-            carouselImg.loading = 'lazy'; // Ленивая загрузка
+            carouselImg.loading = 'lazy';
 
             carouselImg.addEventListener('click', () => openModal(index));
             carouselItem.appendChild(carouselImg);
             carousel.appendChild(carouselItem);
 
-            // Создаем точку навигации
             const dot = document.createElement('button');
             dot.className = 'carousel-dot';
             if (index === 0) dot.classList.add('active');
@@ -147,51 +131,39 @@ function initHorizontalGallery() {
             dotsContainer.appendChild(dot);
         });
 
-        // Обновляем счетчик
         totalImgSpan.textContent = totalImages;
 
-        // Запускаем автопрокрутку
         startAutoSlide();
     }
-
-    // Функция перехода к слайду
     function goToSlide(index) {
         currentIndex = index;
         updateCarousel();
     }
 
-    // Функция обновления горизонтальной карусели
     function updateCarousel() {
-        // Обновляем позицию карусели (горизонтальная прокрутка)
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // Обновляем активный слайд
         document.querySelectorAll('.carousel-item').forEach((item, index) => {
             item.classList.toggle('active', index === currentIndex);
         });
 
-        // Обновляем активную точку
         document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
 
-        // Обновляем счетчик в модальном окне
         currentImgSpan.textContent = currentIndex + 1;
     }
 
-    // Следующий слайд (вправо)
     function nextSlide() {
         currentIndex = (currentIndex + 1) % totalImages;
         updateCarousel();
     }
 
-    // Предыдущий слайд (влево)
     function prevSlide() {
         currentIndex = (currentIndex - 1 + totalImages) % totalImages;
         updateCarousel();
     }
 
-    // Открытие модального окна
     function openModal(index) {
         currentIndex = index;
         modalImage.src = images[currentIndex];
@@ -199,22 +171,18 @@ function initHorizontalGallery() {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Останавливаем автопрокрутку
         stopAutoSlide();
     }
 
-    // Закрытие модального окна
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
 
-        // Возобновляем автопрокрутку если не наводим на галерею
         if (!isHovering) {
             startAutoSlide();
         }
     }
 
-    // Навигация в модальном окне
     function nextModalSlide() {
         currentIndex = (currentIndex + 1) % totalImages;
         modalImage.src = images[currentIndex];
@@ -227,10 +195,9 @@ function initHorizontalGallery() {
         currentImgSpan.textContent = currentIndex + 1;
     }
 
-    // Автопрокрутка
     function startAutoSlide() {
         stopAutoSlide();
-        autoSlideInterval = setInterval(nextSlide, 1500); // секунды между слайдами
+        autoSlideInterval = setInterval(nextSlide, 1500); // секунды между слайдами возможно увеличить?
     }
 
     function stopAutoSlide() {
@@ -240,7 +207,6 @@ function initHorizontalGallery() {
         }
     }
 
-    // Обработчики событий
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
 
@@ -248,14 +214,12 @@ function initHorizontalGallery() {
     modalNextBtn.addEventListener('click', nextModalSlide);
     modalClose.addEventListener('click', closeModal);
 
-    // Закрытие модального окна при клике на оверлей
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-    // Свайп для мобильных устройств в модальном окне
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -280,7 +244,6 @@ function initHorizontalGallery() {
         }
     }
 
-    // Свайп для самой карусели на мобильных
     let carouselTouchStartX = 0;
     let carouselTouchEndX = 0;
 
@@ -305,7 +268,6 @@ function initHorizontalGallery() {
         }
     }
 
-    // Управление автопрокруткой при наведении
     const galleryContainer = document.querySelector('.gallery-container');
 
     galleryContainer.addEventListener('mouseenter', () => {
@@ -320,7 +282,6 @@ function initHorizontalGallery() {
         }
     });
 
-    // Управление с клавиатуры
     document.addEventListener('keydown', (e) => {
         if (modal.classList.contains('active')) {
             if (e.key === 'Escape') {
@@ -333,7 +294,6 @@ function initHorizontalGallery() {
                 nextModalSlide();
             }
         } else if (document.querySelector('.gallery-container:hover')) {
-            // Управление каруселью с клавиатуры при наведении
             if (e.key === 'ArrowLeft') {
                 prevSlide();
             }
@@ -343,34 +303,24 @@ function initHorizontalGallery() {
         }
     });
 
-    // Инициализация
     init();
 }
-
-// Инициализация галереи при загрузке страницы
-// Вместо initVerticalGallery() вызываем initHorizontalGallery()
 document.addEventListener('DOMContentLoaded', function () {
-    // ... существующий код ...
 
-    // Добавляем инициализацию горизонтальной галереи
     initHorizontalGallery();
 });
-// Обновите функцию highlightContactButtons:
 function highlightContactButtons() {
     const contactButtons = document.querySelectorAll('.contact-button');
     const contactHint = document.getElementById('contactHint');
 
-    // Показываем подсказку
     if (contactHint) {
         contactHint.classList.add('show');
     }
 
-    // Подсвечиваем кнопки
     contactButtons.forEach(btn => {
         btn.classList.add('highlighted');
     });
 
-    // Мигающий эффект
     let blinkCount = 0;
     const blinkInterval = setInterval(() => {
         contactButtons.forEach(btn => {
@@ -382,13 +332,10 @@ function highlightContactButtons() {
         blinkCount++;
         if (blinkCount >= 6) {
             clearInterval(blinkInterval);
-            // Возвращаем нормальный вид
             contactButtons.forEach(btn => {
                 btn.style.transform = '';
                 btn.classList.remove('highlighted');
             });
-
-            // Скрываем подсказку
             if (contactHint) {
                 contactHint.classList.remove('show');
             }
