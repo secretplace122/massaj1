@@ -790,12 +790,12 @@ body {
     }
 
     .modal-content {
-        max-width: 98%;
-        max-height: 90%;
+        max-width: 250%;
+        max-height: 250%;
     }
 
     .modal-image-container {
-        height: 50vh;
+        height: 80vh;
     }
 }
 
