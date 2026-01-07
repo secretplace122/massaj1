@@ -1344,7 +1344,6 @@ body {
 .yandex-rating-widget {
     position: fixed;
     right: -170px;
-    /* Показываем только логотип (60px) */
     bottom: 100px;
     z-index: 999;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1354,7 +1353,6 @@ body {
 
 .yandex-rating-widget:hover {
     right: 0;
-    /* Показываем полностью (210px) */
 }
 
 .rating-container {
@@ -1367,9 +1365,7 @@ body {
     border: 2px solid #f9fefa;
     border-right: none;
     height: 70px;
-    /* Фиксированная высота */
     width: 250px;
-    /* Фиксированная ширина */
     min-width: 210px;
     max-width: 250px;
 }
@@ -1382,7 +1378,6 @@ body {
     border-right: 2px solid rgba(249, 254, 250, 0.3);
     flex-shrink: 0;
     width: 60px;
-    /* Ширина бейджа с логотипом */
 }
 
 .yandex-logo {
@@ -1427,7 +1422,6 @@ body {
     align-items: center;
     gap: 5px;
     width: 150px;
-    /* Ширина виджета Яндекса */
     flex-shrink: 0;
 }
 
@@ -1450,7 +1444,6 @@ body {
     white-space: nowrap;
 }
 
-/* Адаптация для мобильных */
 @media (max-width: 768px) {
     .yandex-rating-widget {
         right: -182px;
@@ -1467,7 +1460,7 @@ body {
         padding: 8px 12px;
         height: 75px;
         width: 250px;
-        min-width: 190px;
+        min-width: 50px;
         max-width: 250px;
         border-radius: 20px 0 0 20px;
     }
@@ -1491,11 +1484,10 @@ body {
         width: 140px;
     }
 
-    /* ДОБАВЬ ЭТОТ КОНТЕЙНЕР */
     .rating-widget-inner {
-        width: 150px; /* Оригинальный размер Яндекса */
-        height: 50px; /* Оригинальный размер Яндекса */
-        transform: scale(0.933); /* 140/150 = 0.933 */
+        width: 150px;
+        height: 50px;
+        transform: scale(0.933);
         transform-origin: top left;
         overflow: hidden;
         border-radius: 8px;
@@ -1504,8 +1496,8 @@ body {
     }
 
     .rating-widget iframe {
-        width: 150px; /* Оригинальный размер */
-        height: 50px; /* Оригинальный размер */
+        width: 150px;
+        height: 50px;
         border: none;
         margin: 0;
         padding: 0;
@@ -1516,8 +1508,6 @@ body {
         font-size: 0.65rem;
     }
 }
-
-/* Для совсем маленьких экранов */
 @media (max-width: 480px) {
     .yandex-rating-widget {
         right: -170px;
@@ -1552,12 +1542,10 @@ body {
         padding-left: 7px;
         width: 130px;
     }
-
-    /* ОБНОВИ ЭТОТ КОНТЕЙНЕР */
     .rating-widget-inner {
-        width: 150px; /* Оригинальный размер Яндекса */
-        height: 50px; /* Оригинальный размер Яндекса */
-        transform: scale(0.867); /* 130/150 = 0.867 */
+        width: 150px;
+        height: 50px;
+        transform: scale(0.867);
         transform-origin: top left;
         overflow: hidden;
         border-radius: 8px;
@@ -1566,8 +1554,8 @@ body {
     }
 
     .rating-widget iframe {
-        width: 150px; /* Оригинальный размер */
-        height: 50px; /* Оригинальный размер */
+        width: 150px;
+        height: 50px;
         border: none;
         margin: 0;
         padding: 0;
@@ -1579,7 +1567,6 @@ body {
     }
 }
 
-/* Для планшетов */
 @media (min-width: 769px) and (max-width: 1024px) {
     .yandex-rating-widget {
         right: -170px;
@@ -1587,24 +1574,21 @@ body {
     }
 }
 
-/* Для больших экранов */
 @media (min-width: 1200px) {
     .yandex-rating-widget {
         right: -170px;
     }
 }
 
-/* Для очень широких экранов */
 @media (min-width: 1400px) {
     .yandex-rating-widget {
         right: -170px;
     }
 }
 
-/* Активация по тапу на мобильных */
 @media (hover: none) and (pointer: coarse) {
     .yandex-rating-widget {
-        right: -45px;
+        right: -170px;
     }
 
     .yandex-rating-widget.active {
@@ -1616,7 +1600,6 @@ body {
     }
 }
 
-/* Для очень высоких экранов */
 @media (min-height: 1000px) {
     .yandex-rating-widget {
         bottom: 150px;
