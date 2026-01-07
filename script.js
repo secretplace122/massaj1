@@ -342,3 +342,51 @@ function highlightContactButtons() {
         }
     }, 500);
 }
+// Яндекс рейтинг - мобильная версия
+document.addEventListener('DOMContentLoaded', function () {
+    const ratingWidget = document.querySelector('.yandex-rating-widget');
+
+    if (!ratingWidget) return;
+
+    // Для мобильных устройств
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        let isRatingExpanded = false;
+        let tapTimer;
+
+        ratingWidget.addEventListener('touchstart', function (e) {
+            e.stopPropagation();
+            tapTimer = setTimeout(() => {
+                if (!isRatingExpanded) {
+                    this.classList.add('active');
+                    this.style.right = '0';
+                    isRatingExpanded = true;
+                } else {
+                    this.classList.remove('active');
+                    this.style.right = '-115px';
+                    isRatingExpanded = false;
+                }
+            }, 150);
+        }, { passive: true });
+
+        ratingWidget.addEventListener('touchend', function () {
+            clearTimeout(tapTimer);
+        }, { passive: true });
+
+        ratingWidget.addEventListener('touchmove', function () {
+            clearTimeout(tapTimer);
+        }, { passive: true });
+
+        document.addEventListener('touchstart', function (e) {
+            if (isRatingExpanded && !ratingWidget.contains(e.target)) {
+                ratingWidget.classList.remove('active');
+                ratingWidget.style.right = '-115px';
+                isRatingExpanded = false;
+            }
+        }, { passive: true });
+    }
+
+    // Плавное появление
+    setTimeout(() => {
+        ratingWidget.style.opacity = '1';
+    }, 2000);
+});
