@@ -347,8 +347,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const ratingWidget = document.querySelector('.yandex-rating-widget');
 
     if (!ratingWidget) return;
-
-    // Для мобильных устройств
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
         let isRatingExpanded = false;
         let tapTimer;
@@ -384,8 +382,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, { passive: true });
     }
-
-    // Плавное появление
     setTimeout(() => {
         ratingWidget.style.opacity = '1';
     }, 2000);
